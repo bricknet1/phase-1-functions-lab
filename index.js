@@ -13,13 +13,14 @@ function distanceTravelledInFeet(pickup, dropoff) {
 }
 
 function calculatesFarePrice(pickup, dropoff) {
-    if (distanceTravelledInFeet(pickup, dropoff) > 400 && distanceTravelledInFeet(pickup, dropoff) <= 2000) {
-        return (distanceTravelledInFeet(pickup, dropoff) - 400) * 0.02;
-    } else if (distanceTravelledInFeet(pickup, dropoff) > 2000 && distanceTravelledInFeet(pickup, dropoff) < 2500) {
+    const feetTravelled = distanceTravelledInFeet(pickup, dropoff);
+    if (feetTravelled > 400 && feetTravelled <= 2000) {
+        return (feetTravelled - 400) * 0.02;
+    } else if (feetTravelled > 2000 && feetTravelled < 2500) {
         return 25;
-    } else if (distanceTravelledInFeet(pickup, dropoff) <= 400) {
+    } else if (feetTravelled <= 400) {
         return 0;
-    } else if (distanceTravelledInFeet(pickup, dropoff) >= 2500) {
+    } else if (feetTravelled >= 2500) {
         return 'cannot travel that far'
 }
 }
